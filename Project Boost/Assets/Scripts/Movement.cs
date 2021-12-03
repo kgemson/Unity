@@ -9,8 +9,8 @@ public class Movement : MonoBehaviour
     // CACHE - e.g. references for readability or speed
     // STATE - private instance (member) variables
 
-    [SerializeField] float mainThrust = 100f;
-    [SerializeField] float rotationThrust = 1f;
+    [SerializeField] float mainThrust = 1000f;
+    [SerializeField] float rotationThrust = 100f;
     [SerializeField] AudioClip mainEngine;
 
     [SerializeField] ParticleSystem mainEngineParticles;
@@ -48,11 +48,11 @@ public class Movement : MonoBehaviour
 
     void ProcessRotation()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             RotateLeft();
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             RotateRight();
         }
@@ -77,13 +77,16 @@ public class Movement : MonoBehaviour
 
     private void StopThrusting()
     {
-        audioSource.Stop();
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
         mainEngineParticles.Stop();
     }
 
     private void RotateLeft()
     {
-        ApplyRotation(rotationThrust);
+        ApplyRotation(-rotationThrust);
         if (!rightThrusterParticles.isPlaying)
         {
             rightThrusterParticles.Play();
@@ -92,7 +95,7 @@ public class Movement : MonoBehaviour
 
     private void RotateRight()
     {
-        ApplyRotation(-rotationThrust);
+        ApplyRotation(rotationThrust);
         if (!leftThrusterParticles.isPlaying)
         {
             leftThrusterParticles.Play();

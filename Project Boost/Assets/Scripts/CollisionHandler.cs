@@ -14,7 +14,7 @@ public class CollisionHandler : MonoBehaviour
     AudioSource audioSource;
 
     bool isTransitioning = false;
-    bool collisionDisabled = false;
+    //bool collisionDisabled = false;
 
     void Start() 
     {
@@ -23,10 +23,10 @@ public class CollisionHandler : MonoBehaviour
     
     void Update() 
     {
-        RespondToDebugKeys();    
+        //RespondToDebugKeys();    
     }
 
-    void RespondToDebugKeys()
+    /*void RespondToDebugKeys()
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
@@ -36,11 +36,12 @@ public class CollisionHandler : MonoBehaviour
         {
             collisionDisabled = !collisionDisabled;  // toggle collision
         } 
-    }
+    }*/
 
     void OnCollisionEnter(Collision other) 
     {
-        if (isTransitioning || collisionDisabled) { return; }
+        //if (isTransitioning || collisionDisabled) { return; }
+        if (isTransitioning) { return; }
         
         switch (other.gameObject.tag)
         {
