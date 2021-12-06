@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: a557de153899a1b4a9cdc2bf2f7e0fa4, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7551873405302984068, guid: f4141b61b0cb7a24eabbe785ef2d97e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55.745907
+      value: 35.749783
       objectReference: {fileID: 0}
     - target: {fileID: 7551873405302984068, guid: f4141b61b0cb7a24eabbe785ef2d97e6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -294,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4482206723308779363, guid: 00ded5a2386b3644f89efd70a590529a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.642658
+      value: 7.646534
       objectReference: {fileID: 0}
     - target: {fileID: 4482206723308779363, guid: 00ded5a2386b3644f89efd70a590529a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -419,7 +419,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000041723246}
-  m_LocalPosition: {x: 44.50003, y: 27, z: 28.000008}
+  m_LocalPosition: {x: 22.3, y: 27, z: 25.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -499,7 +499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1287824500048344431, guid: ca86ec78d5bd70c42aac7d390767a9bf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40.58357
+      value: 20.587444
       objectReference: {fileID: 0}
     - target: {fileID: 1287824500048344431, guid: ca86ec78d5bd70c42aac7d390767a9bf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -564,7 +564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7837672621736097644, guid: 39925d92f63d2e84daf5987d5b71b880, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55.996124
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 7837672621736097644, guid: 39925d92f63d2e84daf5987d5b71b880, type: 3}
       propertyPath: m_LocalPosition.y

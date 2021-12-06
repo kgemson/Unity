@@ -14,7 +14,7 @@ public class CollisionHandler : MonoBehaviour
     AudioSource audioSource;
 
     bool isTransitioning = false;
-    //bool collisionDisabled = false;
+    bool collisionDisabled = false;
 
     void Start() 
     {
@@ -23,11 +23,13 @@ public class CollisionHandler : MonoBehaviour
     
     void Update() 
     {
-        //RespondToDebugKeys();    
+        // allow for cheat codes to be activated
+        RespondToCheatKeys();    
     }
 
-    /*void RespondToDebugKeys()
+    void RespondToCheatKeys()
     {
+        // if 'L' entered, skip to next level. If 'C' entered, disable collision processing
         if (Input.GetKeyDown(KeyCode.L))
         {
             LoadNextLevel();
@@ -36,13 +38,13 @@ public class CollisionHandler : MonoBehaviour
         {
             collisionDisabled = !collisionDisabled;  // toggle collision
         } 
-    }*/
+    }
 
     void OnCollisionEnter(Collision other) 
     {
-        //if (isTransitioning || collisionDisabled) { return; }
-        if (isTransitioning) { return; }
-        
+        //take no action if a) we are at the end of a level, or b) we have cheat code activated
+        if (isTransitioning || collisionDisabled) { return; }
+                
         switch (other.gameObject.tag)
         {
             case "Friendly":
@@ -63,7 +65,7 @@ public class CollisionHandler : MonoBehaviour
         audioSource.Stop();
         audioSource.PlayOneShot(success);
         successParticles.Play();
-        GetComponent<Movement>().enabled = false;
+        GetComponent<Movement>().enabled = false; //disable Movement script
         Invoke("LoadNextLevel", levelLoadDelay);
     }
 
@@ -73,7 +75,7 @@ public class CollisionHandler : MonoBehaviour
         audioSource.Stop();
         audioSource.PlayOneShot(crash);
         crashParticles.Play();
-        GetComponent<Movement>().enabled = false;
+        GetComponent<Movement>().enabled = false; //disable Movement script
         Invoke("ReloadLevel", levelLoadDelay);
     }
 
@@ -93,5 +95,4 @@ public class CollisionHandler : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }
-
 }
