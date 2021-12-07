@@ -202,3 +202,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dace1c3f617f4ee4eba810a6c105e8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementVector: {x: 1, y: 0, z: 0}
+  period: 2

@@ -20,7 +20,7 @@ public class Oscillate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (period !=0) //avoid 'divide by 0' errors
+        if (period != Mathf.Epsilon) //avoid 'divide by 0' errors - 'Mathf.Epsilon' is more accurate way of comparing float 0 
         {
             float cycles = Time.time / period; //counts number of cycles since game started
             const float tau = Mathf.PI * 2; //sets value for number of radians (there are 2 * pi radians in a circle)
