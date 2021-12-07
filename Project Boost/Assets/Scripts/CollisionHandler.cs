@@ -48,7 +48,7 @@ public class CollisionHandler : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Friendly":
-                Debug.Log("This thing is friendly");
+                
                 break;
             case "Finish":
                 StartSuccessSequence();
@@ -66,6 +66,7 @@ public class CollisionHandler : MonoBehaviour
         audioSource.PlayOneShot(success);
         successParticles.Play();
         GetComponent<Movement>().enabled = false; //disable Movement script
+
         Invoke("LoadNextLevel", levelLoadDelay);
     }
 
